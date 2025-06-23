@@ -7,11 +7,13 @@ from sklearn.ensemble import RandomForestClassifier
 
 @st.cache_data
 def load_data():
+   
    """load the iris dataset"""
-    iris=load_iris()
-    df=pd.DataFrame(iris.data,columns=iris.feature_names)
-    df['species']=iris.target
-    return df,iris.target_names  
+   iris=load_iris()
+   df=pd.DataFrame(iris.data,columns=iris.feature_names)
+   df['species']=iris.target
+   return df,iris.target_names  
+    
 df, target_names = load_data()
 model=RandomForestClassifier(n_estimators=100,random_state=42)
 model.fit(df.drop('species',axis=1),df['species'])
