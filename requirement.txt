@@ -6,3 +6,4 @@ seaborn
 flask
 memory_profiler
 ipykernel
+scikit-learn
